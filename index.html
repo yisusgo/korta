@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | IUJO - Instituto Universitario Jesús Obrero</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Ir a la página de inicio del IUJO">
+                    <img src="images/LOGO IUJO.jpg" alt="Logo IUJO" style="max-width: 300px;">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="reservar.html">Reservar Cubículo</a></li>
+                <li><a href="aulas.html">Aulas y Espacios</a></li>
+                <li><a href="mis-reservas.html">Mis Reservas</a></li>
+                <li><a href="biblioteca.html">Info Biblioteca</a></li>
+                <li><a href="https://webiujocatia.wordpress.com/contacto/" target="_blank" rel="noopener noreferrer">Contacto</a></li>
+            </ul>
+        </nav>
+        <hr>
+
+        <section id="inicio" style="padding: 20px; text-align: center;">
+            <h1>Bienvenido al Sistema de Reserva de Cubículos</h1>
+            <p>Por favor, inicie sesión para continuar.</p>
+        </section>
+              
+        <!-- NUEVA SECCIÓN DE LOGIN (Reemplaza a la búsqueda) -->
+        <div class="login-container">
+            <div class="login-card">
+                <h3><span style="color:var(--primary-red)">IUJO</span> LOGIN</h3>
+                <form action="/login" method="POST">
+                    <div>
+                        <label for="login-email">Correo Electrónico</label>
+                        <input type="email" id="login-email" name="email" placeholder="usuario@gmail.com" required>
+                    </div>
+                    <div>
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" name="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" style="width: 100%;">Ingresar</button>
+                    
+                    <p style="margin-top: 15px; font-size: 0.9rem;">
+                        ¿No tienes cuenta? <a href="registro.html" style="color: var(--primary-red); font-weight: bold;">Regístrate aquí</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer style="background-color: #f4f4f4; padding: 20px; margin-top: 20px;">
+        <div class="footer-container">
+            <p>&copy; 2025 Instituto Universitario Jesús Obrero (IUJO).</p>
+        </div>
+    </footer>
+
+</body>
+</html>

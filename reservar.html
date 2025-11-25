@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Cubículo | IUJO</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/LOGO IUJO.jpg" alt="Logo IUJO" style="max-width: 300px;">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="reservar.html">Reservar Cubículo</a></li>
+                <li><a href="aulas.html">Aulas y Espacios</a></li>
+                <li><a href="mis-reservas.html">Mis Reservas</a></li>
+                <li><a href="biblioteca.html">Info Biblioteca</a></li>
+                <li><a href="https://webiujocatia.wordpress.com/contacto/" target="_blank" rel="noopener noreferrer">Contacto</a></li>
+            </ul>
+        </nav>
+        <hr>
+
+        <!-- SECCIÓN DE AYUDA MODIFICADA -->
+        <section style="padding: 0 20px; position: relative;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <h2>Formulario de Reserva</h2>
+                <!-- Botón de interrogación -->
+                <button id="btn-ayuda" type="button" class="btn-circle" title="¿Cómo reservar?">?</button>
+            </div>
+
+            <!-- Contenedor oculto con las instrucciones -->
+            <div id="info-ayuda" class="info-box hidden">
+                <h3>Cómo reservar un aula</h3>
+                <ol>
+                    <li><strong>Busca:</strong> Explora las aulas disponibles en la sección "Aulas y Espacios".</li>
+                    <li><strong>Selecciona:</strong> Elige la que mejor se adapte a tus necesidades.</li>
+                    <li><strong>Reserva:</strong> Completa el formulario con tus datos.</li>
+                    <li><strong>Confirma:</strong> Recibirás un correo de confirmación.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="reservar" style="padding: 20px;">
+            <p>Complete todos los campos para solicitar su reserva.</p>
+
+            <form action="/submit-reserva" method="POST">
+                <fieldset>
+                    <legend><strong>Datos del Solicitante</strong></legend>
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="cedula">Cédula de Identidad:</label>
+                        <input type="text" id="cedula" name="cedula" placeholder="V-12345678" required pattern="[VEve]-\d{7,9}">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="email">Correo Electrónico (Gmail):</label>
+                        <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" required pattern="[a-zA-Z0-9._%+-]+@gmail\.com$">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="carrera">Carrera:</label>
+                        <select id="carrera" name="carrera" required>
+                            <option value="">-- Seleccione su carrera --</option>
+                            <option value="informatica">Informática</option>
+                            <option value="contaduria">Contaduría</option>
+                            <option value="electronica">Electrónica</option>
+                            <option value="mecanica">Mecánica</option>
+                            <option value="otra">Otra</option>
+                        </select>
+                    </div>
+                </fieldset>
+                
+                <br>
+
+                <fieldset>
+                    <legend><strong>Detalles de la Reserva</strong></legend>
+                    <div>
+                        <label for="tipo_uso">Tipo de Uso:</label>
+                        <select id="tipo_uso" name="tipo_uso" required>
+                            <option value="">-- Seleccione un motivo --</option>
+                            <option value="estudio_grupal">Estudio Grupal</option>
+                            <option value="exposicion">Preparar Exposición</option>
+                            <option value="reunion_proyecto">Reunión de Proyecto</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="seleccion_aula">Selección de Aula:</label>
+                        <select id="seleccion_aula" name="seleccion_aula" required>
+                            <option value="">-- Seleccione un aula --</option>
+                            <option value="aula_1">aula 1 (8-10 personas, Pizarra, TV)</option>
+                            <option value="aula_2">aula 2 (5-6 personas, Pizarra, TV)</option>
+                            <option value="aula_3">aula 3 (5-6 personas, Pizarra, TV)</option>
+                            <option value="aula_4">aula 4 (5-6 personas, Pizarra, TV)</option>
+                            <option value="aula_5">aula 5 (3-2 personas, Pizarra, TV)</option>
+                            <option value="aula_6">aula 6 (3-2 personas, Pizarra, TV)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="fecha_hora">Fecha y Hora de Inicio:</label>
+                        <input type="datetime-local" id="fecha_hora" name="fecha_hora" required>
